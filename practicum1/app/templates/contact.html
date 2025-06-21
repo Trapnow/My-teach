@@ -15,6 +15,11 @@
         <textarea placeholder="Your Message:" required></textarea>
         <button type="submit">Send</button>
     </form>
+    <h1>Возникли вопросы? Тогда приезжайте к Нам:</h1>
+    <h3>{{ info.name }}</h3>
+    <p>{{ info.address.street }}</p>
+    <p>{{ info.address.city }}</p>
+    <p>{{ info.address.zip }}</p>
 </div>
 {% endif %}
 {% endblock %}

@@ -10,5 +10,12 @@
     <p><strong>Mission:</strong> To teach programming effectively.</p>
     <p><strong>Vision:</strong> Empower people to build their ideas.</p>
     <p><strong>Values:</strong> Collaboration, innovation, and learning.</p>
+    <h2>Our team:</h2>
+    {% for people in team_members %}`
+        <div class="team">
+            <p>Имя: {{ people.name }}</p>
+            <p>Должность: {{ people.role }}</p>
+        </div>
+    {% endfor %}
 </main>
 {% endblock %}

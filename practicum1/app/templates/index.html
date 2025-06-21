@@ -10,6 +10,7 @@
         <p>Explore the website to learn more about us!</p>
         <img src="{{ url_for('static', filename='img/flask-logo.svg') }}" alt="Logo">
         <p class="tagline">Flask - web development, one drop at a time</p>
+        <p>Сегодня: {{ current_time.strftime('%A,%B %d, %Y, %H:%M:%S') }}</p>
     </div>
 </main>
 {% endblock %}
