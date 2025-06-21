@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+{% if request.method == 'POST' %}
+    <h1>Сообщение доставлено</h1>
+{% else %}
+<div class="container">
+    <h1>Contact Us</h1>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name:" required>
+        <input type="email" placeholder="Your Email:" required>
+        <textarea placeholder="Your Message:" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}
