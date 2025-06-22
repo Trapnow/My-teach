@@ -40,6 +40,6 @@ def submit():
         name = request.form.get("name")
         email = request.form.get("email")
         message = request.form.get("message")
-        return f"{name}, Ваше сообщение доставлено, отправим Вам ответ на {email}"
+        return render_template("contact.html", name=name, email=email)
     else:
         return redirect(url_for("contact"))
