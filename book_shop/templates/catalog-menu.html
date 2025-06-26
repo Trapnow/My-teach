@@ -1,0 +1,8 @@
+<div class="col-md-3">
+    <h4>Каталог</h4>
+    <div class="list-group">
+        {% for section in sections %}
+        <a href="#" class="list-group-item list-group-item-action">{{ section.title }}</a>
+        {% endfor %}
+    </div>
+</div>

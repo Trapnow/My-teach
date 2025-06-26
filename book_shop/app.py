@@ -21,6 +21,22 @@ class Section(db.Model):
         return f"<Section {self.title}"
 
 
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    author = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    genre = db.Column(db.String(100), nullable=False)
+    cover = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(100), nullable=False)
+    rating = db.Column(db.Float, nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return f"<Book {self.title}"
+
+
+
 @app.route("/")
 def index():
     sections = Section.query.all()
