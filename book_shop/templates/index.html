@@ -32,17 +32,15 @@
 </nav>
 
 <!-- Основной контент -->
-<div class="container mt-4">
+<div class="container scrollspy-example mt-4">
     <div class="row">
         <!-- Левое меню -->
         <div class="col-md-3">
             <h4>Каталог</h4>
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Фантастика</a>
-                <a href="#" class="list-group-item list-group-item-action">Классика</a>
-                <a href="#" class="list-group-item list-group-item-action">Детективы</a>
-                <a href="#" class="list-group-item list-group-item-action">Детская литература</a>
-                <a href="#" class="list-group-item list-group-item-action">Наука и образование</a>
+                {% for section in sections %}
+                <a href="#" class="list-group-item list-group-item-action">{{ section.title }}</a>
+                {% endfor %}
             </div>
         </div>
 
@@ -65,36 +63,17 @@
 
             <h2 class="mt-5">Полный каталог книг</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="category1.jpg" class="card-img-top" alt="Категория 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Фантастика и фэнтези</h5>
-                            <p class="card-text">Все книги жанра</p>
-                            <a href="#" class="btn btn-primary">Перейти в раздел</a>
+                {% for section in sections %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="category1.jpg" class="card-img-top" alt="Категория 1">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ section.title }}</h5>
+                                <a href="#" class="btn btn-primary">Перейти в раздел</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="category2.jpg" class="card-img-top" alt="Категория 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Художественная литература</h5>
-                            <p class="card-text">Классика и современная проза</p>
-                            <a href="#" class="btn btn-primary">Перейти в раздел</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="category3.jpg" class="card-img-top" alt="Категория 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Научно-популярная литература</h5>
-                            <p class="card-text">Наука, образование, саморазвитие</p>
-                            <a href="#" class="btn btn-primary">Перейти в раздел</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <!-- Футер -->
             <footer class="bg-light py-3 mt-5 fixed-bottom bg-dark text-white p-3">
@@ -131,4 +110,5 @@
     </div>
 </div>
 </body>
+
 </html>
